@@ -15,6 +15,7 @@
     "titleTextColor": "#727C83",
     "titleFontSize": 14,
     "subTitleFontSize": 12,
+    "subTitleNumberOfLines": 2,
     "subTitleTextColor": "#727C83",
     "blurBackground": 0
   },

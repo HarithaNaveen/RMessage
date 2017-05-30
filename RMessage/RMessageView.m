@@ -550,7 +550,7 @@ static NSMutableDictionary *globalDesignDictionary;
   _titleLabel.backgroundColor = nil;
 
   _subtitleLabel.numberOfLines = 0;
-  _subtitleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+  _subtitleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
   _subtitleLabel.font = [UIFont boldSystemFontOfSize:12.f];
   _subtitleLabel.textAlignment = NSTextAlignmentLeft;
   _subtitleLabel.textColor = [UIColor darkGrayColor];
@@ -688,6 +688,12 @@ static NSMutableDictionary *globalDesignDictionary;
   }
   if (subTitleShadowOffsetX && subTitleShadowOffsetY) {
     _subtitleLabel.shadowOffset = CGSizeMake([subTitleShadowOffsetX floatValue], [subTitleShadowOffsetY floatValue]);
+  }
+  int subTitleNumberOfLines = [[_messageViewDesignDictionary valueForKey:@"subTitleNumberOfLines"] integerValue];
+  if (subTitleNumberOfLines) {
+      self.subtitleLabel.numberOfLines = subTitleNumberOfLines;
+  } else {
+    _subtitleLabel.numberOfLines = 0;
   }
 }
 
